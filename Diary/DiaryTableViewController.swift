@@ -10,7 +10,7 @@ import UIKit
 class DiaryTableViewController: UITableViewController {
     
     var list = ["테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1테스트1","테스트3","테스트4테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트"]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,7 @@ class DiaryTableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
         navigationController?.pushViewController(vc, animated: true)
-//        present(nav, animated: true)
+        //        present(nav, animated: true)
     }
     
     @IBAction func addBarButtonClicked(_ sender: UIBarButtonItem) {
@@ -50,8 +50,8 @@ class DiaryTableViewController: UITableViewController {
         let nav = UINavigationController(rootViewController: vc)
         
         // 3. 화면 전환 방식 설정 (애니매이션)
-//        vc.modalTransitionStyle = .crossDissolve        // 모달 애니매이션
-//        vc.modalPresentationStyle = .fullScreen         // 모달 방식
+        //        vc.modalTransitionStyle = .crossDissolve        // 모달 애니매이션
+        //        vc.modalPresentationStyle = .fullScreen         // 모달 방식
         nav.modalPresentationStyle = .fullScreen
         
         // 4. 화면 띄우기
@@ -80,7 +80,7 @@ class DiaryTableViewController: UITableViewController {
         vc.modalTransitionStyle = .coverVertical        // 모달 애니매이션
         vc.modalPresentationStyle = .formSheet          // 모달 방식
         // 4. 화면 띄우기
-//        present(vc, animated: true)
+        //        present(vc, animated: true)
         
         // Pass Data 2. vc 가 가지고 있는 프로퍼티에 데이터 추가
         vc.contents = list[indexPath.row]
@@ -102,13 +102,32 @@ class DiaryTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-//    // Custom 스와이프 - Leading
-//    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        UISwipeActionsConfiguration(actions: <#T##[UIContextualAction]#>)
-//    }
-//
-//    // Custom 스와이프 - Trailing
-//    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        UISwipeActionsConfiguration(actions: <#T##[UIContextualAction]#>)
-//    }
+    // Custom 스와이프 - Leading
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let bookmark = UIContextualAction(style: .normal, title: "") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            print("bookmark")
+            success(true)
+        }
+        bookmark.image = UIImage(systemName: "bookmark")
+        bookmark.backgroundColor = .systemCyan
+        
+        let like = UIContextualAction(style: .normal, title: "") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            print("like")
+            success(true)
+        }
+        like.image = UIImage(systemName: "heart")
+        like.backgroundColor = .systemPink
+        return UISwipeActionsConfiguration(actions: [bookmark, like])
+    }
+    
+    // Custom 스와이프 - Trailing
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: "삭제") { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            print("delete")
+            success(true)
+        }
+        delete.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
 }

@@ -10,6 +10,6 @@ import UIKit
 extension UIViewController {
     
     func setBackgroundColor() {
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .green
     }
 }
