@@ -21,6 +21,8 @@
 		C015692D2A777968008685C2 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015692C2A777968008685C2 /* SearchCollectionViewController.swift */; };
 		C01569302A777ADD008685C2 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015692E2A777ADD008685C2 /* SearchCollectionViewCell.swift */; };
 		C01569312A777ADD008685C2 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C015692F2A777ADD008685C2 /* SearchCollectionViewCell.xib */; };
+		C0EAD38A2A789B4B00A289BA /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EAD3892A789B4B00A289BA /* SettingTableViewController.swift */; };
+		C0EAD3B42A79F23300A289BA /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EAD3B32A79F23300A289BA /* TimeLineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		C015692C2A777968008685C2 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		C015692E2A777ADD008685C2 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		C015692F2A777ADD008685C2 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		C0EAD3892A789B4B00A289BA /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		C0EAD3B32A79F23300A289BA /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		C015690D2A773A3A008685C2 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				C0EAD3B32A79F23300A289BA /* TimeLineViewController.swift */,
 				C015692C2A777968008685C2 /* SearchCollectionViewController.swift */,
 				C015692E2A777ADD008685C2 /* SearchCollectionViewCell.swift */,
 				C015692F2A777ADD008685C2 /* SearchCollectionViewCell.xib */,
@@ -81,6 +86,7 @@
 				C01569102A773A3A008685C2 /* SceneDelegate.swift */,
 				C01569122A773A3A008685C2 /* AddViewController.swift */,
 				C01569142A773A3A008685C2 /* Main.storyboard */,
+				C0EAD3892A789B4B00A289BA /* SettingTableViewController.swift */,
 				C01569242A773BBE008685C2 /* DiaryTableViewCell.swift */,
 				C01569252A773BBE008685C2 /* DiaryTableViewCell.xib */,
 				C01569222A773AD7008685C2 /* DiaryTableViewController.swift */,
@@ -168,7 +174,9 @@
 				C01569132A773A3A008685C2 /* AddViewController.swift in Sources */,
 				C015692B2A776259008685C2 /* Extension+UIViewController.swift in Sources */,
 				C01569262A773BBE008685C2 /* DiaryTableViewCell.swift in Sources */,
+				C0EAD38A2A789B4B00A289BA /* SettingTableViewController.swift in Sources */,
 				C01569232A773AD7008685C2 /* DiaryTableViewController.swift in Sources */,
+				C0EAD3B42A79F23300A289BA /* TimeLineViewController.swift in Sources */,
 				C01569292A7752AA008685C2 /* DetailViewController.swift in Sources */,
 				C015690F2A773A3A008685C2 /* AppDelegate.swift in Sources */,
 				C01569112A773A3A008685C2 /* SceneDelegate.swift in Sources */,

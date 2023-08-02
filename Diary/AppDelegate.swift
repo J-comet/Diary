@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
         // 현재 앱에 한해서 모든 레이블, 텍스트뷰 색깔 같은 색으로 적용
-        UILabel.appearance().textColor = .white
+//        UILabel.appearance().textColor = .white
         UITextView.appearance().textColor = .darkText
         
         return true

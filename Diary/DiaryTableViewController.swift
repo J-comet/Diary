@@ -30,10 +30,14 @@ class DiaryTableViewController: UITableViewController {
     }
     
     @IBAction func searchBarButtonClicked(_ sender: UIBarButtonItem) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
+        
+        // 다른 스토리보드에 작성되어 있을 때 Main 을 찾는 코드가 필요할 때
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
+        
+        // 같은 스토리보드에 작성되어 있을 때
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
         navigationController?.pushViewController(vc, animated: true)
-        //        present(nav, animated: true)
     }
     
     @IBAction func addBarButtonClicked(_ sender: UIBarButtonItem) {
