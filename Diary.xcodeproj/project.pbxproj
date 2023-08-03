@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00F2DDB2A7B72BF004729B9 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00F2DDA2A7B72BF004729B9 /* LottoViewController.swift */; };
 		C015690F2A773A3A008685C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015690E2A773A3A008685C2 /* AppDelegate.swift */; };
 		C01569112A773A3A008685C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01569102A773A3A008685C2 /* SceneDelegate.swift */; };
 		C01569132A773A3A008685C2 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01569122A773A3A008685C2 /* AddViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C00F2DDA2A7B72BF004729B9 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = SOURCE_ROOT; };
 		C015690B2A773A3A008685C2 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C015690E2A773A3A008685C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C01569102A773A3A008685C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		C015690D2A773A3A008685C2 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				C00F2DDA2A7B72BF004729B9 /* LottoViewController.swift */,
 				C0EAD3B32A79F23300A289BA /* TimeLineViewController.swift */,
 				C015692C2A777968008685C2 /* SearchCollectionViewController.swift */,
 				C015692E2A777ADD008685C2 /* SearchCollectionViewCell.swift */,
@@ -179,6 +182,7 @@
 				C0EAD3B42A79F23300A289BA /* TimeLineViewController.swift in Sources */,
 				C01569292A7752AA008685C2 /* DetailViewController.swift in Sources */,
 				C015690F2A773A3A008685C2 /* AppDelegate.swift in Sources */,
+				C00F2DDB2A7B72BF004729B9 /* LottoViewController.swift in Sources */,
 				C01569112A773A3A008685C2 /* SceneDelegate.swift in Sources */,
 				C01569302A777ADD008685C2 /* SearchCollectionViewCell.swift in Sources */,
 			);

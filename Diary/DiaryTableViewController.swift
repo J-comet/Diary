@@ -49,6 +49,8 @@ class DiaryTableViewController: UITableViewController {
         // 2. 스토리보드 파일 내 뷰컨트롤러 찾기
         let vc = sb.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
         
+        vc.transType = .add
+        
         // 2-1 (옵션). 네비게이션 컨트롤러가 있는 형태(제목)바로 Present 하고 싶은 경우
         // nav 를 사용한다면, present 와 화면 전환 방식도 nav 로 수정 해주어야함.
         let nav = UINavigationController(rootViewController: vc)
@@ -76,21 +78,30 @@ class DiaryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 1. 스토리보드 파일 찾기
+//        // 1. 스토리보드 파일 찾기
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        // 2. 스토리보드 파일 내 뷰컨트롤러 찾기
+//        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//        // 3. 화면 전환 방식 설정 (애니매이션)
+//        vc.modalTransitionStyle = .coverVertical        // 모달 애니매이션
+//        vc.modalPresentationStyle = .formSheet          // 모달 방식
+//        // 4. 화면 띄우기
+//        //        present(vc, animated: true)
+//
+//        // Pass Data 2. vc 가 가지고 있는 프로퍼티에 데이터 추가
+//        vc.contents = list[indexPath.row]
+//
+//        // 네비컨트롤러가 붙어있을 떄 오른쪽에서 나오도록 설정 가능
+//        // 인터페이스빌더(스토리보드)에 네비게이션 컨트롤러가 임베드 되어 있어야만 Push 가 동작!!
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        // AddViewController 로 이동
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        // 2. 스토리보드 파일 내 뷰컨트롤러 찾기
-        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        // 3. 화면 전환 방식 설정 (애니매이션)
+        let vc = sb.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
         vc.modalTransitionStyle = .coverVertical        // 모달 애니매이션
         vc.modalPresentationStyle = .formSheet          // 모달 방식
-        // 4. 화면 띄우기
-        //        present(vc, animated: true)
-        
-        // Pass Data 2. vc 가 가지고 있는 프로퍼티에 데이터 추가
         vc.contents = list[indexPath.row]
-        
-        // 네비컨트롤러가 붙어있을 떄 오른쪽에서 나오도록 설정 가능
-        // 인터페이스빌더(스토리보드)에 네비게이션 컨트롤러가 임베드 되어 있어야만 Push 가 동작!!
+        vc.transType = .edit
         navigationController?.pushViewController(vc, animated: true)
     }
     
