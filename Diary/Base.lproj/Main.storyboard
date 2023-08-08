@@ -200,11 +200,16 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="SnT-JO-mSU">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vOa-VD-bed"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vOa-VD-bed" firstAttribute="trailing" secondItem="O3s-xt-uPc" secondAttribute="trailing" constant="20" id="71i-Go-Mqt"/>
+                            <constraint firstItem="SnT-JO-mSU" firstAttribute="centerY" secondItem="mWC-4y-eEM" secondAttribute="centerY" id="EcI-rU-doU"/>
+                            <constraint firstItem="SnT-JO-mSU" firstAttribute="centerX" secondItem="mWC-4y-eEM" secondAttribute="centerX" id="Nx7-dv-gHY"/>
                             <constraint firstItem="vOa-VD-bed" firstAttribute="trailing" secondItem="9H1-Yu-U1M" secondAttribute="trailing" constant="30" id="dr5-Xe-1Dr"/>
                             <constraint firstItem="O3s-xt-uPc" firstAttribute="top" secondItem="9H1-Yu-U1M" secondAttribute="bottom" constant="20" id="hO2-wE-8YF"/>
                             <constraint firstItem="9H1-Yu-U1M" firstAttribute="top" secondItem="vOa-VD-bed" secondAttribute="top" constant="30" id="ncO-dk-m4Y"/>
@@ -216,6 +221,7 @@
                         <outlet property="contentTextField" destination="9H1-Yu-U1M" id="daE-dl-rFW"/>
                         <outlet property="drwtDateLabel" destination="SjL-xF-FDF" id="wr5-9s-eWy"/>
                         <outlet property="drwtNoLabel" destination="IDS-2b-l4k" id="Xwx-0q-dd8"/>
+                        <outlet property="indicatorView" destination="SnT-JO-mSU" id="N8o-Hv-oiJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siW-YS-hMY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

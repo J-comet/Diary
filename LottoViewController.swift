@@ -15,6 +15,7 @@ class LottoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet var drwtDateLabel: UILabel!
 
     @IBOutlet var contentTextField: UITextField!
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
     
 //    let list = ["영화", "드라마", "애니매이션", "만화", "연극", "뮤지컬"]
     let numList: [Int] = Array(1...1100).reversed()
@@ -26,7 +27,8 @@ class LottoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.view.bringSubviewToFront(self.indicatorView)
+
         // Alamofire + SwiftyJson
         // validate = 서버개발자와 논의 후 어떤 statusCode 일 때 성공으로 할지 ex) validate(statusCode: 200...300)
         requestLottoInfo(num: "1079")
@@ -40,30 +42,42 @@ class LottoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         pickerView.dataSource = self
         
         drwtNoLabel.numberOfLines = 0
+        
+        indicatorView.hidesWhenStopped = true
     }
     
     private func requestLottoInfo(num: String) {
+        self.indicatorView.startAnimating()
         AF.request(url+num, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
-                let date = json["drwNoDate"].stringValue
-                let drwtNo1 = json["drwtNo1"].intValue
-                let drwtNo2 = json["drwtNo2"].intValue
-                let drwtNo3 = json["drwtNo3"].intValue
-                let drwtNo4 = json["drwtNo4"].intValue
-                let drwtNo5 = json["drwtNo5"].intValue
-                let drwtNo6 = json["drwtNo6"].intValue
-                let bonusNumber = json["bnusNo"].intValue
                 
-                self.drwtDateLabel.text = date
-                
-                self.drwtNoLabel.text = "당첨번호\n \(drwtNo1) \(drwtNo2) \(drwtNo3) \(drwtNo4) \(drwtNo5) \(drwtNo6) + 보너스번호 \(bonusNumber)"
+                if json["returnValue"] == "fail" {
+                    self.drwtNoLabel.text = "당첨번호가 조회되지 않습니다."
+                    self.drwtDateLabel.text = ""
+                } else {
+                    let date = json["drwNoDate"].stringValue
+                    let drwtNo1 = json["drwtNo1"].intValue
+                    let drwtNo2 = json["drwtNo2"].intValue
+                    let drwtNo3 = json["drwtNo3"].intValue
+                    let drwtNo4 = json["drwtNo4"].intValue
+                    let drwtNo5 = json["drwtNo5"].intValue
+                    let drwtNo6 = json["drwtNo6"].intValue
+                    let bonusNumber = json["bnusNo"].intValue
+                    
+                    self.drwtDateLabel.text = date
+                    
+                    self.drwtNoLabel.text = "당첨번호\n \(drwtNo1) \(drwtNo2) \(drwtNo3) \(drwtNo4) \(drwtNo5) \(drwtNo6) + 보너스번호 \(bonusNumber)"
+                }
                 
             case .failure(let error):
                 print(error)
+                self.drwtNoLabel.text = "재시도해주세요"
+                self.drwtDateLabel.text = ""
             }
+            self.indicatorView.stopAnimating()
         }
     }
     
